@@ -1,3 +1,6 @@
 venv/
 __pycache__/
 .vscode/
+db-frontend/node_modules
+db-frontend/package-lock.json
+.DS_Store
