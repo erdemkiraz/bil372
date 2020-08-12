@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import {SERVICE_BASE, BASE_URL} from "./base_service";
-import {DataTable} from 'primereact/datatable';
+import { SERVICE_BASE, BASE_URL } from "./base_service";
+import { DataTable } from 'primereact/datatable';
 import axios from 'axios';
-import {Button} from 'primereact/button';
-import {Column} from 'primereact/column';
-import {ColumnGroup} from 'primereact/columngroup';
-import {Row} from 'primereact/row';
+import { Button } from 'primereact/button';
+import { Column } from 'primereact/column';
+import { ColumnGroup } from 'primereact/columngroup';
+import { Row } from 'primereact/row';
 
 
 class ListStudents extends React.Component {
@@ -29,17 +29,17 @@ class ListStudents extends React.Component {
 
     componentDidMount() {
 
-        this.getData().then(data => this.setState({students: data}))
+        this.getData().then(data => this.setState({ students: data }))
     }
 
 
     async getData() {
         // let data = await axios.get('http://localhost:5000/api/courses_list')
-        let data = await axios.get(BASE_URL + "students_list")
+        let data = await axios.get(BASE_URL + "list_students")
         console.log(BASE_URL + "list_students")
-        console.log("getStudents")
-        console.log(data.data.students)
-        return data.data.students
+        console.log("students:")
+        console.log(data.data)
+        return data.data
     }
 
 
@@ -51,8 +51,8 @@ class ListStudents extends React.Component {
 
     render() {
         var studentCount = this.state.students ? this.state.students.length : 0;
-        var header = <div className="p-clearfix" style={{'lineHeight': '1.87em'}}>List of Students <Button
-            icon="pi pi-refresh" style={{'float': 'right'}}/></div>;
+        var header = <div className="p-clearfix" style={{ 'lineHeight': '1.87em' }}>List of Students <Button
+            icon="pi pi-refresh" style={{ 'float': 'right' }} /></div>;
         var footer = "There are " + studentCount + ' students';
 
         return (
@@ -60,11 +60,11 @@ class ListStudents extends React.Component {
                 {/*<button onClick={this.handleClick}>Click Me</button>*/}
 
                 <DataTable value={this.state.students} header={header} footer={footer}>
-                    <Column field="student_id" header="Student ID" filter={true} filterPlaceholder={"1611.."}/>
-                    <Column field="fname" header="First Name" filter={true}/>
-                    <Column field="email" header="E mail" style={{textAlign: 'center'}} filter={true}
-                            filterMatchMode={"contains"}/>
-                    <Column body={this.actionTemplate} style={{textAlign: 'center', width: '6em'}}/>
+                    <Column field="student_id" header="Student ID" filter={true} filterPlaceholder={"1611.."} filterMatchMode={"contains"} />
+                    <Column field="fname" header="First Name" filter={true} filterMatchMode={"contains"} />
+                    <Column field="email" header="E mail" style={{ textAlign: 'center' }} filter={true}
+                        filterMatchMode={"contains"} />
+                    <Column body={this.actionTemplate} style={{ textAlign: 'center', width: '6em' }} />
                 </DataTable>
             </div>
         );

@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import axios from "axios";
-import {TabView, TabPanel} from 'primereact/tabview';
-import {Button} from "primereact/button";
-import {BASE_URL} from "./base_service";
+import { TabView, TabPanel } from 'primereact/tabview';
+import { Button } from "primereact/button";
+import { BASE_URL } from "./base_service";
 
 
 class AddPerson extends React.Component {
@@ -13,46 +13,41 @@ class AddPerson extends React.Component {
 
         this.state = {
             data: {
-            isPerson :"1",
-            isStudent :"0",
-            isProfessor :"0",
-            isEmployee :"0",
-            isCompany :"0",
-            TCKN:"123",
-            name:"ayberk",
-            surname:"uslu",
-            adress : "",
-            gender : "",
-            email : "",
-            telno: "",
-            student_id : "",
-            entry_year : "",
-            is_active : "",
-            isUnderGraduate : "",
-            scolarship : "",
-            salary : "",
-            tax_number :""
-                }
+                isPerson: "1",
+                isStudent: "0",
+                isProfessor: "0",
+                isEmployee: "0",
+                isCompany: "0",
+                TCKN: "123",
+                name: "ayberk",
+                surname: "uslu",
+                adress: "",
+                gender: "",
+                email: "",
+                telno: "",
+                student_id: "",
+                entry_year: "",
+                is_active: "",
+                isUnderGraduate: "",
+                scolarship: "",
+                salary: "",
+                tax_number: ""
+            }
         };
     }
 
     componentDidMount() {
-        this.getData().then(data => this.setState({students: data}))
+        // this.getData().then(data => this.setState({ students: data }))
     }
 
     async getData() {
-        let data = await axios.get('http://localhost:5000/api/courses_list')
-        console.log("getStudents")
-        console.log(data.data.courses)
-        return data.data.courses
     }
 
-    async sendData(){
-    // await axios.post(BASE_URL+"insert_entity",this.state)
-        console.log(BASE_URL+ "insert_entity")
-        console.log()
-    await axios.post(BASE_URL+"insert_entity", {data:"ayberk"})
-    // await axios.get(BASE_URL+"insert_entity")
+    async sendData() {
+        // await axios.post(BASE_URL+"insert_entity",this.state)
+        console.log(BASE_URL + "insert_entity")
+        await axios.post(BASE_URL + "insert_entity", { "tckn": 12055200000, "fname": "ayberk" })
+        // await axios.get(BASE_URL+"insert_entity")
     }
 
     render() {
@@ -60,36 +55,36 @@ class AddPerson extends React.Component {
         return (
             <div>
                 <TabView activeIndex={this.state.activeIndex}
-                         onTabChange={(e) => this.setState({activeIndex: e.index})}>
+                    onTabChange={(e) => this.setState({ activeIndex: e.index })}>
                     <TabPanel header="Insert Person">
-                        <div style={{'height': '300px'}}>
+                        <div style={{ 'height': '300px' }}>
                             Content Person
                         </div>
-                        <Button label="Insert Person" className="p-button-raised p-button-rounded" onClick={this.sendData}/>
+                        <Button label="Insert Person" className="p-button-raised p-button-rounded" onClick={this.sendData} />
                     </TabPanel>
                     <TabPanel header="Insert Student">
-                        <div style={{'height': '300px'}}>
+                        <div style={{ 'height': '300px' }}>
                             Content Student
                         </div>
-                        <Button label="Insert Person" className="p-button-raised p-button-rounded"/>
+                        <Button label="Insert Student" className="p-button-raised p-button-rounded" />
                     </TabPanel>
                     <TabPanel header="Instert Employee">
-                        <div style={{'height': '300px'}}>
-                        Content Employee
+                        <div style={{ 'height': '300px' }}>
+                            Content Employee
                         </div>
-                        <Button label="Insert Employee" className="p-button-raised p-button-rounded"/>
+                        <Button label="Insert Employee" className="p-button-raised p-button-rounded" />
                     </TabPanel>
                     <TabPanel header="Insert Professor">
-                        <div style={{'height': '300px'}}>
-                        Content Professor
+                        <div style={{ 'height': '300px' }}>
+                            Content Professor
                         </div>
-                        <Button label="Insert Professor" className="p-button-raised p-button-rounded"/>
+                        <Button label="Insert Professor" className="p-button-raised p-button-rounded" />
                     </TabPanel>
                     <TabPanel header="Insert Company">
-                        <div style={{'height': '300px'}}>
-                        Content Company
+                        <div style={{ 'height': '300px' }}>
+                            Content Company
                         </div>
-                        <Button label="Insert Company" className="p-button-raised p-button-rounded"/>
+                        <Button label="Insert Company" className="p-button-raised p-button-rounded" />
                     </TabPanel>
                 </TabView>
 

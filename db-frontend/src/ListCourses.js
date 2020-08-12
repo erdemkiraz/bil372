@@ -23,10 +23,10 @@ class ListCourses extends React.Component {
     }
 
     async getData() {
-        let data = await axios.get(BASE_URL+'courses_list')
-        console.log("getStudents")
-        console.log(data.data.courses)
-        return data.data.courses
+        let data = await axios.get(BASE_URL+'list_courses')
+        console.log("courses:")
+        console.log(data.data)
+        return data.data
     }
 
     render() {

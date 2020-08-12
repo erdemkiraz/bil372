@@ -1,11 +1,8 @@
--- SQLite
+-- -- SQLite
 SELECT
-	p.fname,
-	p.lname,
-	p.email,
-	s.student_id
+	*
 FROM
-	PERSON p,
-	STUDENT s
-WHERE
-	p.tckn = s.tckn;
+	PERSON p;
+
+-- INSERT INTO PERSON (tckn, fname) 
+-- VALUES (12051800000, 'ayberk');
