@@ -21,6 +21,7 @@ class AddPerson extends React.Component {
         this.state = {
             response : 0,
             entityNumber: "",
+            isUpdate : false,
             TCKN: "",
             name: "",
             surname: "",
@@ -66,6 +67,7 @@ class AddPerson extends React.Component {
     reset_state() {
         this.setState({
             entityNumber: "",
+            isUpdate : false,
             TCKN: "",
             name: "",
             surname: "",
@@ -232,9 +234,20 @@ class AddPerson extends React.Component {
                                                        onChange={(e) => this.setState({telno: e.target.value})}/></div>
                                     </div>
 
+
+
+
+
                                 </div>
                                 <div className="p-col-12 p-md-4">
+                                    <div className="p-field p-grid">
+                                        <label className="p-col-fixed"
+                                               style={{width: '100px'}}>Update?</label>
+                                        <div className="p-col">
+                                    <InputSwitch checked={this.state.isUpdate} onChange={(e) => this.setState({isUpdate: e.value})} />
 
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className="p-col-12 p-md-4">
 
@@ -304,6 +317,14 @@ class AddPerson extends React.Component {
                                     </div>
                                 </div>
                                 <div className="p-col-12 p-md-4">
+                                    <div className="p-field p-grid">
+                                        <label className="p-col-fixed"
+                                               style={{width: '100px'}}>Update?</label>
+                                        <div className="p-col">
+                                    <InputSwitch checked={this.state.isUpdate} onChange={(e) => this.setState({isUpdate: e.value})} />
+
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className="p-col-12 p-md-4">
                                 </div>
@@ -347,6 +368,14 @@ class AddPerson extends React.Component {
                                     </div>
                                 </div>
                                 <div className="p-col-12 p-md-4">
+                                    <div className="p-field p-grid">
+                                        <label className="p-col-fixed"
+                                               style={{width: '100px'}}>Update?</label>
+                                        <div className="p-col">
+                                    <InputSwitch checked={this.state.isUpdate} onChange={(e) => this.setState({isUpdate: e.value})} />
+
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className="p-col-12 p-md-4">
                                 </div>
@@ -390,7 +419,14 @@ class AddPerson extends React.Component {
 
                                 </div>
                                 <div className="p-col-12 p-md-4">
+                                    <div className="p-field p-grid">
+                                        <label className="p-col-fixed"
+                                               style={{width: '100px'}}>Update?</label>
+                                        <div className="p-col">
+                                    <InputSwitch checked={this.state.isUpdate} onChange={(e) => this.setState({isUpdate: e.value})} />
 
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className="p-col-12 p-md-4">
 
@@ -450,7 +486,16 @@ class AddPerson extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="p-col-12 p-md-4"></div>
+                                <div className="p-col-12 p-md-4">
+                                    <div className="p-field p-grid">
+                                        <label className="p-col-fixed"
+                                               style={{width: '100px'}}>Update?</label>
+                                        <div className="p-col">
+                                    <InputSwitch checked={this.state.isUpdate} onChange={(e) => this.setState({isUpdate: e.value})} />
+
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="p-col-12 p-md-4"></div>
 
                             </div>
@@ -500,7 +545,16 @@ class AddPerson extends React.Component {
                                     </div>
 
                                 </div>
-                                <div className="p-col-12 p-md-4"></div>
+                                <div className="p-col-12 p-md-4">
+                                    <div className="p-field p-grid">
+                                        <label className="p-col-fixed"
+                                               style={{width: '100px'}}>Update?</label>
+                                        <div className="p-col">
+                                    <InputSwitch checked={this.state.isUpdate} onChange={(e) => this.setState({isUpdate: e.value})} />
+
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="p-col-12 p-md-4"></div>
 
                             </div>
@@ -557,7 +611,16 @@ class AddPerson extends React.Component {
                                     </div>
 
                                 </div>
-                                <div className="p-col-12 p-md-4"></div>
+                                <div className="p-col-12 p-md-4">
+                                    <div className="p-field p-grid">
+                                        <label className="p-col-fixed"
+                                               style={{width: '100px'}}>Update?</label>
+                                        <div className="p-col">
+                                    <InputSwitch checked={this.state.isUpdate} onChange={(e) => this.setState({isUpdate: e.value})} />
+
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="p-col-12 p-md-4"></div>
 
                             </div>
@@ -593,7 +656,16 @@ class AddPerson extends React.Component {
                                     </div>
 
                                 </div>
-                                <div className="p-col-12 p-md-4"></div>
+                                <div className="p-col-12 p-md-4">
+                                    <div className="p-field p-grid">
+                                        <label className="p-col-fixed"
+                                               style={{width: '100px'}}>Update?</label>
+                                        <div className="p-col">
+                                    <InputSwitch checked={this.state.isUpdate} onChange={(e) => this.setState({isUpdate: e.value})} />
+
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="p-col-12 p-md-4"></div>
 
                             </div>
@@ -621,7 +693,7 @@ class AddPerson extends React.Component {
                                                style={{width: '100px'}}>Major Name</label>
                                         <div className="p-col">
 
-                                            <InputText value={this.state.salary}
+                                            <InputText value={this.state.name}
                                                          onChange={(e) => this.setState({name: e.target.value})}/>
                                         </div>
                                     </div>
@@ -637,9 +709,16 @@ class AddPerson extends React.Component {
                                     </div>
                                 </div>
                                 <div className="p-col-12 p-md-4">
+                                    <div className="p-field p-grid">
+                                        <label className="p-col-fixed"
+                                               style={{width: '100px'}}>Update?</label>
+                                        <div className="p-col">
+                                    <InputSwitch checked={this.state.isUpdate} onChange={(e) => this.setState({isUpdate: e.value})} />
+
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="p-col-12 p-md-4">
-                                </div>
+                                <div className="p-col-12 p-md-4"></div>
 
                             </div>
                         </div>

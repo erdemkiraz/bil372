@@ -8,6 +8,7 @@ import ListStudents from "./ListStudents";
 import ListCourses from "./ListCourses";
 import AddPerson from "./AddPerson";
 import ListTakesCourse from "./ListTakesCourse"
+import Remove from "./Remove";
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import {TabMenu} from "primereact/tabmenu";
@@ -19,6 +20,7 @@ import {Menu} from 'primereact/menu';
             {label: 'List Courses', icon: 'pi pi-fw pi-calendar',url : 'ListCourses'},
             {label: 'List Taken Courses', icon: 'pi pi-fw pi-calendar',url : 'ListTakenCourses'},
             {label: 'Add Person', icon: 'pi pi-fw pi-pencil',url : 'AddPerson'},
+            {label: 'Remove Person', icon: 'pi pi-fw pi pi-trash',url : 'RemovePerson'},
         ]
 
 
@@ -30,20 +32,12 @@ const routing = (
           <TabMenu model={items} />
           </div>
 
-            {/*<ul>*/}
-            {/*    <li>*/}
-            {/*        <Link to="/">Home</Link>*/}
-            {/*    </li>*/}
-            {/*    <li>*/}
-            {/*        <Link to="/ListStudents">Student List</Link>*/}
-            {/*    </li>*/}
-
-            {/*</ul>*/}
             <Route path="/" component={App} />
             <Route path="/ListStudents" component={ListStudents} />
             <Route path="/ListCourses" component={ListCourses} />
             <Route path="/ListTakenCourses" component={ListTakesCourse} />
             <Route path="/AddPerson" component={AddPerson} />
+            <Route path="/RemovePerson" component={Remove} />
         </div>
     </Router>
 )
