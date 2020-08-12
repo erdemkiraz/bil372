@@ -55,43 +55,62 @@ def list_students_api():
     students = query_db('SELECT p.fname, p.lname, p.email, s.student_id FROM PERSON p, STUDENT s WHERE p.tckn = s.tckn')
     return res_to_json(students)
 
+@app.route("/api/taken_courses")
+def get_taken_courses():
+    courses = query_db('SELECT p.fname, p.lname, s.student_id,c.course_id,c.cname, tc.midterm_score, tc.final_score, tc.grade FROM PERSON p, STUDENT s, TAKES_COURSE tc, COURSE c WHERE p.tckn = s.tckn AND tc.s_tckn = p.tckn AND c.course_id = tc.course_id')
+    return res_to_json(courses)
+
 
 # TODO use the real data directed by form for inserting to db
 @app.route("/api/insert_entity", methods=["POST"])
 def insert_entity():
-    mocked_isperson = 0  #
-    mocked_isstudent = 0  #
-    mocked_isemployee = 0  #
-    mocked_isprofessor = 0  #
+
 
     req = json.loads(request.data)
+    req = req["data"]
     print(req)
+    # entity_number = req["entityNumber"] ##uncomment if you want to add data to db,
+    #
+    entity_number = -1
+
+    print("ENTITY ", entity_number)  # 0 person, 1 student, 2 employee, 3 professor, 4 company, 5 course,
+    # 6 takesCourse, 7 Prequisite, 8 major
+    response = {
+        "status": 200
+    }
+
+    # TODO : entity number comes from frontend with bunch of data , need to be added to on on backend. req contains all data.
 
     try:
-        if mocked_isperson == 1:
+        if entity_number == 0:
             res = insert_db(
                 'INSERT INTO PERSON (tckn, fname)' +
                 'VALUES (?, ?)', [req['tckn'], req['fname']]
             )
-        elif mocked_isstudent == 1:
+        elif entity_number == 1:
             res = insert_db(
                 'INSERT INTO STUDENT (tckn, student_id)' +
                 'VALUES (?, ?)', [req['tckn'], req['student_id']]
             )
-        elif mocked_isemployee == 1:
+        elif entity_number == 2:
             res = insert_db(
                 'INSERT INTO EMPLOYEE (tckn, salary)' +
                 'VALUES (?, ?)', [req['tckn'], req['salary']]
             )
-        elif mocked_isprofessor == 1:
+        elif entity_number == 3:
             res = insert_db(
                 'INSERT INTO PROFESSOR (tckn, title)' +
                 'VALUES (?, ?)', [req['tckn'], req['title']]
             )
-    except Exception as e:
-        return str(e), 500
 
-    return jsonify(success=True)
+        #TODO: need to add other 5 entities
+    except Exception as e:
+        response["status"] = 500
+        return json.dumps(response)
+
+    # return jsonify(success=True)
+
+    return json.dumps(response)  # SEND 200 FOR SUCCESS, REST IS ERROR
 
 
 def insert_person(TCKN, name, surname, adress, gender, email, telno):
@@ -111,5 +130,5 @@ def insert_prof(TCKN, title, department):
     print("insert prf")
 
 
-def insert_company(companyID, name, adress, telephone, hasBus):
+def insert_company(companyID, name, adress, telno, hasBus):
     print("insert company")

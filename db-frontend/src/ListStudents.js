@@ -54,12 +54,16 @@ class ListStudents extends React.Component {
         var header = <div className="p-clearfix" style={{ 'lineHeight': '1.87em' }}>List of Students <Button
             icon="pi pi-refresh" style={{ 'float': 'right' }} /></div>;
         var footer = "There are " + studentCount + ' students';
+        const paginatorLeft = <Button icon="pi pi-refresh"/>;
 
         return (
             <div>
                 {/*<button onClick={this.handleClick}>Click Me</button>*/}
 
-                <DataTable value={this.state.students} header={header} footer={footer}>
+                <DataTable value={this.state.students} header={header} footer={footer} paginator={true} paginatorLeft={paginatorLeft}
+
+                    paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
+                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} students" rows={10} rowsPerPageOptions={[5,10,20]} >
                     <Column field="student_id" header="Student ID" filter={true} filterPlaceholder={"1611.."} filterMatchMode={"contains"} />
                     <Column field="fname" header="First Name" filter={true} filterMatchMode={"contains"} />
                     <Column field="email" header="E mail" style={{ textAlign: 'center' }} filter={true}

@@ -6,6 +6,7 @@ import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 import "primereact/resources/themes/nova-light/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
+import 'primeflex/primeflex.css';
 
 class App extends React.Component {
 

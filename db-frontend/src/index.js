@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import ListStudents from "./ListStudents";
 import ListCourses from "./ListCourses";
 import AddPerson from "./AddPerson";
+import ListTakesCourse from "./ListTakesCourse"
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import {TabMenu} from "primereact/tabmenu";
@@ -15,7 +16,8 @@ import {Menu} from 'primereact/menu';
       const items= [
             {label: 'Home', icon: 'pi pi-fw pi-home', url: '/'},
             {label: 'List Students', icon: 'pi pi-fw pi-calendar', url: 'ListStudents'},
-            {label: 'List Courses', icon: 'pi pi-fw pi-pencil',url : 'ListCourses'},
+            {label: 'List Courses', icon: 'pi pi-fw pi-calendar',url : 'ListCourses'},
+            {label: 'List Taken Courses', icon: 'pi pi-fw pi-calendar',url : 'ListTakenCourses'},
             {label: 'Add Person', icon: 'pi pi-fw pi-pencil',url : 'AddPerson'},
         ]
 
@@ -40,6 +42,7 @@ const routing = (
             <Route path="/" component={App} />
             <Route path="/ListStudents" component={ListStudents} />
             <Route path="/ListCourses" component={ListCourses} />
+            <Route path="/ListTakenCourses" component={ListTakesCourse} />
             <Route path="/AddPerson" component={AddPerson} />
         </div>
     </Router>
