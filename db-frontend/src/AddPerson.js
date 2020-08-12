@@ -12,7 +12,6 @@ class AddPerson extends React.Component {
         super();
 
         this.state = {
-            data: {
                 isPerson: "1",
                 isStudent: "0",
                 isProfessor: "0",
@@ -32,7 +31,6 @@ class AddPerson extends React.Component {
                 scolarship: "",
                 salary: "",
                 tax_number: ""
-            }
         };
     }
 
@@ -46,7 +44,16 @@ class AddPerson extends React.Component {
     async sendData() {
         // await axios.post(BASE_URL+"insert_entity",this.state)
         console.log(BASE_URL + "insert_entity")
-        await axios.post(BASE_URL + "insert_entity", { "tckn": 12055200000, "fname": "ayberk" })
+        // await axios.post(BASE_URL + "insert_entity", { "tckn": 12055200000, "fname": "ayberk" })
+        await axios.post(BASE_URL + "insert_entity",this.state)
+        // await axios.post(BASE_URL + "insert_entity", {
+        //         "isPerson": this.state.isPerson,
+        //         "isStudent": "0",
+        //         "isProfessor": "0",
+        //         "isEmployee": "0",
+        //         "isCompany": "0",
+        //         "TCKN": this.state.TCKN,
+        //        })
         // await axios.get(BASE_URL+"insert_entity")
     }
 
