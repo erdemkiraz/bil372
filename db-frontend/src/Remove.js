@@ -294,7 +294,7 @@ class Remove extends React.Component {
                                 onClick={this.deleteTakesCourse}/>
                     </TabPanel>
 
-                    <TabPanel header="Insert Prequisite">
+                    <TabPanel header="Remove Prequisite">
                         <div style={{'height': '300px'}}>
                             <div className="p-grid p-fluid">
                                 <div className="p-col-12 p-md-4">
@@ -329,7 +329,7 @@ class Remove extends React.Component {
                         <Button label="Remove Prequisite" className="p-button-raised p-button-rounded"
                                 onClick={this.deletePrequisite}/>
                     </TabPanel>
-                    <TabPanel header="Instert Major">
+                    <TabPanel header="Remove Major">
                         <div style={{'height': '300px'}}>
 
                             <div className="p-grid p-fluid">

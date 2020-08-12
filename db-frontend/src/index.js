@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import ListStudents from "./ListStudents";
 import ListCourses from "./ListCourses";
 import AddPerson from "./AddPerson";
@@ -12,7 +12,6 @@ import Remove from "./Remove";
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import {TabMenu} from "primereact/tabmenu";
-import {Menu} from 'primereact/menu';
 
       const items= [
             {label: 'Home', icon: 'pi pi-fw pi-home', url: '/'},
