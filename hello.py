@@ -324,7 +324,7 @@ def insert_entity():
   except Exception as e:
     return Response(response=json.dumps({'reason': str(e), 'status': 400}), status=400)
 
-  return jsonify(success=True)
+  return json.dumps({'status': 200})
 
 @app.route("/api/remove_entity", methods=["POST"])
 def remove_entity():
@@ -408,4 +408,4 @@ def remove_entity():
   except Exception as e:
     return Response(response=json.dumps({'reason': str(e), 'status': 400}), status=400)
 
-  return jsonify(success=True)
+  return json.dumps({'status': 200})
