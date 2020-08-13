@@ -104,7 +104,7 @@ class Remove extends React.Component {
     async sendData(e) {
         this.setState({ response: 0 })
         let data = await axios.post(BASE_URL + "remove_entity", { "data": this.state })
-        if (data.data.status !== 200) {
+        if (data.status !== 200) {
             this.messages.show({ severity: 'error', summary: 'ERROR', detail: 'NOT REMOVED' });
         } else {
             this.messages.show({ severity: 'success', summary: 'Success', detail: 'Remove submitted' });

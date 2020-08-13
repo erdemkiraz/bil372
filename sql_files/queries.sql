@@ -27,7 +27,7 @@ SELECT p.email FROM person p, assists a WHERE p.tckn = a.sa_tckn AND a.course_id
 
 
 -- BIL372 dersini alan yan dal ogrencileri
-SELECT c.course_id,c.cname,p.fname,p.lname,m.tmype FROM person p,student s,course c, takes_course tc,major m 
-WHERE tc.course_id = c.course_id AND p.tckn = s.tckn AND tc.s_tckn= s.tckn AND m.s_tckn= s.tckn AND m.tmype = 'Yandal'  AND c.course_id = 'BIL372';
+SELECT c.course_id,c.cname,p.fname,p.lname,m.mtype FROM person p,student s,course c, takes_course tc,major m 
+WHERE tc.course_id = c.course_id AND p.tckn = s.tckn AND tc.s_tckn= s.tckn AND m.s_tckn= s.tckn AND m.mtype = 'Yandal'  AND c.course_id = 'BIL372';
 
 

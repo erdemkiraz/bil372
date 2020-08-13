@@ -20,7 +20,7 @@ CREATE TABLE STUDENT (
 CREATE TABLE MAJOR (
   s_tckn      bigint,
   mname       varchar(50),
-  tmype       varchar(10),
+  mtype       varchar(10),
   PRIMARY KEY (s_tckn, mname)
 );
 

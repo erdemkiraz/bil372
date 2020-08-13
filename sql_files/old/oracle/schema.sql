@@ -18,7 +18,7 @@ CREATE TABLE STUDENT (
 CREATE TABLE MAJOR (
   s_tckn      number(11),
   mname       varchar(50),
-  tmype       varchar(10)
+  mtype       varchar(10)
 );
 
 CREATE TABLE COURSE (
