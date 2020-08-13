@@ -50,6 +50,7 @@ class AddPerson extends React.Component {
 
         };
         this.sendData = this.sendData.bind(this)
+        this.reset_state = this.reset_state.bind(this)
         this.insertPerson = this.insertPerson.bind(this)
         this.insertEmployee = this.insertEmployee.bind(this)
         this.insertProfessor = this.insertProfessor.bind(this)
@@ -257,7 +258,7 @@ class AddPerson extends React.Component {
                             </div>
                         </div>
                         <Button label="Insert Person" className="p-button-raised p-button-rounded"
-                            onClick={this.insertPerson} />
+                            onClick={(e) => this.insertPerson(e)} />
                     </TabPanel>
                     <TabPanel header="Insert Student">
                         <div style={{ 'height': '300px' }}>
@@ -332,7 +333,7 @@ class AddPerson extends React.Component {
                             </div>
                         </div>
                         <Button label="Insert Student" className="p-button-raised p-button-rounded"
-                            onClick={this.insertStudent} />
+                            onClick={(e) => this.insertStudent(e)} />
                     </TabPanel>
                     <TabPanel header="Instert Employee">
                         <div style={{ 'height': '300px' }}>
@@ -383,7 +384,7 @@ class AddPerson extends React.Component {
                             </div>
                         </div>
                         <Button label="Insert Employee" className="p-button-raised p-button-rounded"
-                            onClick={this.insertEmployee} />
+                            onClick={(e) => this.insertEmployee(e)} />
                     </TabPanel>
                     <TabPanel header="Insert Professor">
                         <div style={{ 'height': '300px' }}>
@@ -436,7 +437,7 @@ class AddPerson extends React.Component {
                             </div>
                         </div>
                         <Button label="Insert Professor" className="p-button-raised p-button-rounded"
-                            onClick={this.insertProfessor} />
+                            onClick={(e) => this.insertProfessor(e)} />
                     </TabPanel>
                     <TabPanel header="Insert Company">
                         <div style={{ 'height': '300px' }}>
@@ -501,7 +502,7 @@ class AddPerson extends React.Component {
                             </div>
                         </div>
                         <Button label="Insert Company" className="p-button-raised p-button-rounded"
-                            onClick={this.insertCompany} />
+                            onClick={(e) => this.insertCompany(e)} />
                     </TabPanel>
 
                     <TabPanel header="Insert Course">
@@ -560,7 +561,7 @@ class AddPerson extends React.Component {
                             </div>
                         </div>
                         <Button label="Insert Course" className="p-button-raised p-button-rounded"
-                            onClick={this.insertCourse} />
+                            onClick={(e) => this.insertCourse(e)} />
                     </TabPanel>
 
                     <TabPanel header="Insert TakesCourse">
@@ -626,7 +627,7 @@ class AddPerson extends React.Component {
                             </div>
                         </div>
                         <Button label="Insert TakesCourse" className="p-button-raised p-button-rounded"
-                            onClick={this.insertTakesCourse} />
+                            onClick={(e) => this.insertTakesCourse(e)} />
                     </TabPanel>
 
                     <TabPanel header="Insert Prerequisite">
@@ -671,7 +672,7 @@ class AddPerson extends React.Component {
                             </div>
                         </div>
                         <Button label="Insert Prerequisite" className="p-button-raised p-button-rounded"
-                            onClick={this.insertPrerequisite} />
+                            onClick={(e) => this.insertPrerequisite(e)} />
                     </TabPanel>
                     <TabPanel header="Instert Major">
                         <div style={{ 'height': '300px' }}>
@@ -723,7 +724,7 @@ class AddPerson extends React.Component {
                             </div>
                         </div>
                         <Button label="Insert Employee" className="p-button-raised p-button-rounded"
-                            onClick={this.insertMajor} />
+                            onClick={(e) => this.insertMajor(e)} />
                     </TabPanel>
 
 

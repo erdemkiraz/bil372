@@ -143,7 +143,7 @@ class Remove extends React.Component {
                             </div>
                         </div>
                         <Button label="Remove Person" className="p-button-raised p-button-rounded"
-                            onClick={this.deletePerson} />
+                            onClick={(e) => this.deletePerson(e)} />
                     </TabPanel>
                     <TabPanel header="Remove Student">
                         <div style={{ 'height': '300px' }}>
@@ -165,7 +165,7 @@ class Remove extends React.Component {
                             </div>
                         </div>
                         <Button label="Remove Student" className="p-button-raised p-button-rounded"
-                            onClick={this.deleteStudent} />
+                            onClick={(e) => this.deleteStudent(e)} />
                     </TabPanel>
                     <TabPanel header="Remove Employee">
                         <div style={{ 'height': '300px' }}>
@@ -188,7 +188,7 @@ class Remove extends React.Component {
                             </div>
                         </div>
                         <Button label="Remove Employee" className="p-button-raised p-button-rounded"
-                            onClick={this.deleteEmployee} />
+                            onClick={(e) => this.deleteEmployee(e)} />
                     </TabPanel>
                     <TabPanel header="Remove Professor">
                         <div style={{ 'height': '300px' }}>
@@ -209,7 +209,7 @@ class Remove extends React.Component {
                             </div>
                         </div>
                         <Button label="Remove Professor" className="p-button-raised p-button-rounded"
-                            onClick={this.deleteProfessor} />
+                            onClick={(e) => this.deleteProfessor(e)} />
                     </TabPanel>
                     <TabPanel header="Remove Company">
                         <div style={{ 'height': '300px' }}>
@@ -232,7 +232,7 @@ class Remove extends React.Component {
                             </div>
                         </div>
                         <Button label="Remove Company" className="p-button-raised p-button-rounded"
-                            onClick={this.deleteCompany} />
+                            onClick={(e) => this.deleteCompany(e)} />
                     </TabPanel>
 
                     <TabPanel header="Remove Course">
@@ -256,7 +256,7 @@ class Remove extends React.Component {
                             </div>
                         </div>
                         <Button label="Remove Course" className="p-button-raised p-button-rounded"
-                            onClick={this.deleteCourse} />
+                            onClick={(e) => this.deleteCourse(e)} />
                     </TabPanel>
 
                     <TabPanel header="Remove TakesCourse">
@@ -287,7 +287,7 @@ class Remove extends React.Component {
                             </div>
                         </div>
                         <Button label="Remove TakesCourse" className="p-button-raised p-button-rounded"
-                            onClick={this.deleteTakesCourse} />
+                            onClick={(e) => this.deleteTakesCourse(e)} />
                     </TabPanel>
 
                     <TabPanel header="Remove Prerequisite">
@@ -323,7 +323,7 @@ class Remove extends React.Component {
                             </div>
                         </div>
                         <Button label="Remove Prerequisite" className="p-button-raised p-button-rounded"
-                            onClick={this.deletePrerequisite} />
+                            onClick={(e) => this.deletePrerequisite(e)} />
                     </TabPanel>
                     <TabPanel header="Remove Major">
                         <div style={{ 'height': '300px' }}>
@@ -358,7 +358,7 @@ class Remove extends React.Component {
                             </div>
                         </div>
                         <Button label="Remove Employee" className="p-button-raised p-button-rounded"
-                            onClick={this.deleteMajor} />
+                            onClick={(e) => this.deleteMajor(e)} />
                     </TabPanel>
 
 
