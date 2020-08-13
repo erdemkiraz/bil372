@@ -16,12 +16,12 @@ class Remove extends React.Component {
 
         this.state = {
             response: 0,
-            entityNumber: "",
+            entityType: "",
             TCKN: "",
             name: "",
             student_id: "",
             companyID: "",
-            prequisiteID : "",
+            prerequisiteID : "",
             courseID : "",
 
 
@@ -34,7 +34,7 @@ class Remove extends React.Component {
         this.deleteCompany = this.deleteCompany.bind(this)
         this.deleteCourse = this.deleteCourse.bind(this)
         this.deleteTakesCourse = this.deleteTakesCourse.bind(this)
-        this.deletePrequisite = this.deletePrequisite.bind(this)
+        this.deletePrerequisite = this.deletePrerequisite.bind(this)
         this.deleteMajor = this.deleteMajor.bind(this)
     }
 
@@ -44,12 +44,12 @@ class Remove extends React.Component {
 
     reset_state() {
         this.setState({
-            entityNumber: "",
+            entityType: "",
             TCKN: "",
             name: "",
             student_id: "",
             companyID: "",
-            prequisiteID : "",
+            prerequisiteID : "",
             courseID : "",
         })
     }
@@ -58,50 +58,50 @@ class Remove extends React.Component {
     }
 
     async deletePerson(e) {
-        await this.setState({entityNumber: "0"})
+        await this.setState({entityType: "0"})
         await this.sendData(e)
 
     }
 
     async deleteStudent(e) {
-        await this.setState({entityNumber: "1"})
+        await this.setState({entityType: "1"})
         await this.sendData(e)
 
     }
 
     async deleteEmployee(e) {
-        await this.setState({entityNumber: "2"})
+        await this.setState({entityType: "2"})
         await this.sendData(e)
     }
 
     async deleteProfessor(e) {
-        await this.setState({entityNumber: "3"})
+        await this.setState({entityType: "3"})
         await this.sendData(e)
     }
 
     async deleteCompany(e) {
-        await this.setState({entityNumber: "4"})
+        await this.setState({entityType: "4"})
         await this.sendData(e)
     }
 
     async deleteCourse(e) {
-        await this.setState({entityNumber: "5"})
+        await this.setState({entityType: "5"})
         await this.sendData(e)
     }
 
 
     async deleteTakesCourse(e) {
-        await this.setState({entityNumber: "6"})
+        await this.setState({entityType: "6"})
         await this.sendData(e)
     }
 
-    async deletePrequisite(e) {
-        await this.setState({entityNumber: "7"})
+    async deletePrerequisite(e) {
+        await this.setState({entityType: "7"})
         await this.sendData(e)
     }
 
     async deleteMajor(e) {
-        await this.setState({entityNumber: "8"})
+        await this.setState({entityType: "8"})
         await this.sendData(e)
     }
 
@@ -294,7 +294,7 @@ class Remove extends React.Component {
                                 onClick={this.deleteTakesCourse}/>
                     </TabPanel>
 
-                    <TabPanel header="Remove Prequisite">
+                    <TabPanel header="Remove Prerequisite">
                         <div style={{'height': '300px'}}>
                             <div className="p-grid p-fluid">
                                 <div className="p-col-12 p-md-4">
@@ -312,11 +312,11 @@ class Remove extends React.Component {
 
                                     <div className="p-field p-grid">
                                         <label className="p-col-fixed"
-                                               style={{width: '100px'}}>Prequisite Course ID</label>
+                                               style={{width: '100px'}}>Prerequisite Course ID</label>
                                         <div className="p-col">
                                             <InputText
-                                                value={this.state.prequisiteID}
-                                                onChange={(e) => this.setState({prequisiteID: e.target.value})}/>
+                                                value={this.state.prerequisiteID}
+                                                onChange={(e) => this.setState({prerequisiteID: e.target.value})}/>
                                         </div>
                                     </div>
 
@@ -326,8 +326,8 @@ class Remove extends React.Component {
 
                             </div>
                         </div>
-                        <Button label="Remove Prequisite" className="p-button-raised p-button-rounded"
-                                onClick={this.deletePrequisite}/>
+                        <Button label="Remove Prerequisite" className="p-button-raised p-button-rounded"
+                                onClick={this.deletePrerequisite}/>
                     </TabPanel>
                     <TabPanel header="Remove Major">
                         <div style={{'height': '300px'}}>
