@@ -64,11 +64,11 @@ class ListStudents extends React.Component {
 
                     paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
                     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} students" rows={10} rowsPerPageOptions={[5,10,20]} >
-                    <Column field="student_id" header="Student ID" filter={true} filterPlaceholder={"1611.."} filterMatchMode={"contains"} />
-                    <Column field="fname" header="First Name" filter={true} filterMatchMode={"contains"} />
+                    <Column field="student_id" header="Student ID" filter={true} filterPlaceholder={"1611.."} filterMatchMode={"contains"} sortable={true} />
+                    <Column field="fname" header="First Name" filter={true} filterMatchMode={"contains"} sortable={true} />
                     <Column field="email" header="E mail" style={{ textAlign: 'center' }} filter={true}
-                        filterMatchMode={"contains"} />
-                    <Column body={this.actionTemplate} style={{ textAlign: 'center', width: '6em' }} />
+                        filterMatchMode={"contains"}  sortable={true}/>
+                    {/*<Column body={this.actionTemplate} style={{ textAlign: 'center', width: '6em' }} sortable={true} />*/}
                 </DataTable>
             </div>
         );

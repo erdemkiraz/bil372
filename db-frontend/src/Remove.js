@@ -357,7 +357,7 @@ class Remove extends React.Component {
 
                             </div>
                         </div>
-                        <Button label="Remove Employee" className="p-button-raised p-button-rounded"
+                        <Button label="Remove Major" className="p-button-raised p-button-rounded"
                             onClick={(e) => this.deleteMajor(e)} />
                     </TabPanel>
 

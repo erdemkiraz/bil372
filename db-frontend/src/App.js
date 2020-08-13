@@ -1,12 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {TabMenu} from 'primereact/tabmenu';
-import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 import "primereact/resources/themes/nova-light/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import 'primeflex/primeflex.css';
+import logo from "./img/tobb.png"
+import {TabMenu} from "primereact/tabmenu";
 
 class App extends React.Component {
 
@@ -25,10 +24,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-
-        <h1>Admin Panel</h1>
-      </div>
+      <div><h1>Admin Panel</h1></div>
     )
   }
 }

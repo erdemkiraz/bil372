@@ -42,14 +42,14 @@ class ListCourses extends React.Component {
                     paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
                     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} courses" rows={10} rowsPerPageOptions={[5,10,20]} >
 
-                    <Column field="fname" header="Student Name" filter={true} filterMatchMode={"contains"}/>
-                    <Column field="lname" header="Student Surname" filter={true} filterMatchMode={"contains"}/>
-                    <Column field="student_id" header="Student ID" filter={true} filterMatchMode={"contains"}/>
-                    <Column field="course_id" header="Course ID" filter={true} filterMatchMode={"contains"}/>
-                    <Column field="cname" header="Course Name" filter={true} filterMatchMode={"contains"}/>
-                    <Column field="midterm_score" header="Midterm Score" style={{textAlign: 'center'}} filter={true} filterMatchMode={"contains"}/>
-                    <Column field="final_score" header="Final Score" style={{textAlign: 'center'}} filter={true} filterMatchMode={"contains"}/>
-                    <Column field="grade" header="Grade" filter={true} filterMatchMode={"contains"}/>
+                    <Column field="fname" header="Student Name" filter={true} filterMatchMode={"contains"} sortable={true}/>
+                    <Column field="lname" header="Student Surname" filter={true} filterMatchMode={"contains"} sortable={true}/>
+                    <Column field="student_id" header="Student ID" filter={true} filterMatchMode={"contains"} sortable={true}/>
+                    <Column field="course_id" header="Course ID" filter={true} filterMatchMode={"contains"} sortable={true}/>
+                    <Column field="cname" header="Course Name" filter={true} filterMatchMode={"contains"} sortable={true}/>
+                    <Column field="midterm_score" header="Midterm Score" style={{textAlign: 'center'}} filter={true} filterMatchMode={"contains"} sortable={true}/>
+                    <Column field="final_score" header="Final Score" style={{textAlign: 'center'}} filter={true} filterMatchMode={"contains"} sortable={true}/>
+                    <Column field="grade" header="Grade" filter={true} filterMatchMode={"contains"} sortable={true}/>
                     {/*<Column body={this.actionTemplate} style={{textAlign:'center', width: '6em'}}/>*/}
                 </DataTable></div>
         );

@@ -720,7 +720,6 @@ class AddPerson extends React.Component {
                                     </div>
                                 </div>
                                 <div className="p-col-12 p-md-4"></div>
-
                             </div>
                         </div>
                         <Button label="Insert Employee" className="p-button-raised p-button-rounded"
