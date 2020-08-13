@@ -164,6 +164,8 @@ def insert_entity():
 
       else:
         raise Exception('No proper entity type mentioned')
+        # return Response(response=json.dumps({'reason': str(e), 'status': 400}), status=200)
+
 
 
 
@@ -322,9 +324,9 @@ def insert_entity():
         raise Exception('No proper entity type mentioned')
 
   except Exception as e:
-    return Response(response=json.dumps({'reason': str(e), 'status': 400}), status=400)
+    return Response(response=json.dumps({'reason': str(e), 'status': 400}), status=200)
 
-  return jsonify(success=True)
+  return json.dumps({'status': 200})
 
 @app.route("/api/remove_entity", methods=["POST"])
 def remove_entity():
@@ -406,6 +408,6 @@ def remove_entity():
       raise Exception('No proper entity type mentioned')
 
   except Exception as e:
-    return Response(response=json.dumps({'reason': str(e), 'status': 400}), status=400)
+    return Response(response=json.dumps({'reason': str(e), 'status': 400}), status=200)
 
-  return jsonify(success=True)
+  return json.dumps({'status': 200})

@@ -144,7 +144,8 @@ class AddPerson extends React.Component {
     async sendData(e) {
         this.setState({ response: 0 })
         let data = await axios.post(BASE_URL + "insert_entity", { "data": this.state })
-        if (data.status !== 200) {
+        console.log(data)
+        if (data.data.status !== 200) {
             this.messages.show({ severity: 'error', summary: 'ERROR', detail: 'NOT ADDED' });
         }
         else {
