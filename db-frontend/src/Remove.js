@@ -56,50 +56,48 @@ class Remove extends React.Component {
     }
 
     async deletePerson(e) {
-        await this.setState({ entityType: "0" })
+        await this.setState({ entityType: "person" })
         await this.sendData(e)
-
     }
 
     async deleteStudent(e) {
-        await this.setState({ entityType: "1" })
+        await this.setState({ entityType: "student" })
         await this.sendData(e)
-
     }
 
     async deleteEmployee(e) {
-        await this.setState({ entityType: "2" })
+        await this.setState({ entityType: "employee" })
         await this.sendData(e)
     }
 
     async deleteProfessor(e) {
-        await this.setState({ entityType: "3" })
+        await this.setState({ entityType: "professor" })
         await this.sendData(e)
     }
 
     async deleteCompany(e) {
-        await this.setState({ entityType: "4" })
+        await this.setState({ entityType: "company" })
         await this.sendData(e)
     }
 
     async deleteCourse(e) {
-        await this.setState({ entityType: "5" })
+        await this.setState({ entityType: "course" })
         await this.sendData(e)
     }
 
 
     async deleteTakesCourse(e) {
-        await this.setState({ entityType: "6" })
+        await this.setState({ entityType: "takes_course" })
         await this.sendData(e)
     }
 
     async deletePrerequisite(e) {
-        await this.setState({ entityType: "7" })
+        await this.setState({ entityType: "prerequisite" })
         await this.sendData(e)
     }
 
     async deleteMajor(e) {
-        await this.setState({ entityType: "8" })
+        await this.setState({ entityType: "major" })
         await this.sendData(e)
     }
 
